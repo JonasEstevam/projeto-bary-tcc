@@ -48,16 +48,41 @@ const run = async () => {
 		},
 		locale: {
 			translations: {
+				buttons: {
+					filter: 'Filtrar',
+					applyChanges: 'Aplicar alterações',
+					resetFilter: 'Remover filtros',
+					confirmRemovalMany: 'Confirmar a eliminação de {{count}} tag',
+					confirmRemovalMany_plural: 'Confirmar a eliminação de {{count}} tags',
+					createFirstRecord: 'Adicione a primeira tag.',
+				},
 				labels: {
 					Tag: 'Todas as tags',
+					Navigation: 'Navegação',
+					filter: 'Filtros',
+					selectedRecords: 'Selecionadas ({{selected}})',
+					pages: 'Páginas',
+				},
+				properties: {
+					tag: 'Identificação',
+					created_at: 'Data de Criação',
+				},
+				messages: {
+					successfullyBulkDeleted: '{{count}} tag foi removida com sucesso',
+					successfullyBulkDeleted_plural:
+						'{{count}} tags foram removidas com sucesso',
+					successfullyDeleted: 'Tag removida com sucesso',
+					bulkDeleteError: 'Erro ao deletar tags',
+					noRecordsSelected: 'Nenhuma tag foi slecionada',
+					theseRecordsWillBeRemoved: 'A seguinte tag será removida',
+					theseRecordsWillBeRemoved_plural: 'As seguintes tags serão removidas',
+					noRecordsInResource: 'Nenhuma tag encontrada',
+					confirmDelete: 'Tem certeza que deseja remover essa tag?',
 				},
 				actions: {
-					new: 'Criar nova tag',
 					list: 'Todas as tags',
 					search: 'Procurar',
-					edit: 'Editar',
 					delete: 'Deletar',
-					show: 'Mostrar',
 					bulkDelete: 'Deletar todos os selecionados',
 				},
 			},
@@ -68,6 +93,12 @@ const run = async () => {
 				options: {
 					actions: {
 						new: {
+							isVisible: false,
+						},
+						edit: {
+							isVisible: false,
+						},
+						show: {
 							isVisible: false,
 						},
 					},
