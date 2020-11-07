@@ -10,10 +10,9 @@ const mongoose = require('mongoose');
 AdminBro.registerAdapter(AdminBroMongoose);
 
 const app = express();
-const port = 3000;
 
 const run = async () => {
-	const mongooseDB = await mongoose.connect(process.env.MONGODB_URL, {
+	mongoose.connect(process.env.MONGODB_URL, {
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
 	});
@@ -44,7 +43,7 @@ const run = async () => {
 			component: AdminBro.bundle('../dashboard'),
 		},
 		branding: {
-			companyName: 'TCC da Bary <3',
+			companyName: 'TCC da Bary',
 			logo: 'https://i.ibb.co/ZJhd6Vr/logo.png',
 		},
 		locale: {
@@ -102,8 +101,8 @@ const run = async () => {
 		return res.send('Ok!');
 	});
 
-	app.listen(port, () => {
-		console.log(`Example app listening at http://localhost:${port}`);
+	app.listen(process.env.PORT || 3000, () => {
+		console.log(`App listening port ${process.env.PORT || 3000}`);
 	});
 };
 
