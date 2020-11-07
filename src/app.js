@@ -96,7 +96,7 @@ const run = async () => {
 	app.post('/tag', async (req, res) => {
 		const tag = req.body.tag;
 
-		const newTag = new TagModel({tag});
+		const newTag = new Tag({tag});
 		await newTag.save();
 		return res.send('Ok!');
 	});
