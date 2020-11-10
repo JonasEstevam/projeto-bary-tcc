@@ -121,7 +121,7 @@ const run = async () => {
 	app.use(adminBro.options.rootPath, router);
 
 	app.get('/', (req, res) => {
-		res.json({message: 'Hello World!'});
+		res.json({message: 'System is up!'});
 	});
 
 	app.post('/tag', async (req, res) => {
@@ -129,7 +129,7 @@ const run = async () => {
 
 		const newTag = new Tag({tag});
 		await newTag.save();
-		return res.send('Ok!');
+		return res.json({message: 'Tag enviada!'});
 	});
 
 	app.listen(process.env.PORT || 3000, () => {
